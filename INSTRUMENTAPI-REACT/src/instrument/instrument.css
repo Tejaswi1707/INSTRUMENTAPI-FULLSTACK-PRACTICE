@@ -1,0 +1,491 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, #4a90e2, #0b60b0);
+  padding: 15px 20px;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  min-width: 150px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu a {
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background: #008CBA;
+  color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.container h3,
+.view-instrument-heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-decoration: underline;
+}
+
+/* Forms */
+.add-instrument-form label {
+  font-size: 16px;
+  color: #34495e;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.add-instrument-form .form-control,
+.add-instrument-form input,
+.add-instrument-form select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.add-instrument-form .form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+.add-instrument-form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.add-instrument-form button:hover {
+  background-color: #218838;
+}
+
+/* Tables */
+.view-instrument-container table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.view-instrument-container th,
+.view-instrument-container td {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.view-instrument-container thead {
+  background-color: #0b60b0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.view-instrument-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.view-instrument-container tr:hover {
+  background-color: #eef6ff;
+}
+
+/* Buttons */
+.delete-button,
+.edit-button {
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button {
+  background-color: #d9534f;
+}
+
+.delete-button:hover {
+  background-color: #c9302c;
+}
+
+.edit-button {
+  background-color: #007bff;
+  margin-right: 5px;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Error/Success messages */
+.text-danger,
+.error-message {
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.text-success {
+  text-align: center;
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .add-instrument-form {
+    padding: 15px;
+  }
+
+  .add-instrument-form h3,
+  .view-instrument-heading {
+    font-size: 20px;
+  }
+
+  .add-instrument-form .form-control {
+    padding: 10px 12px;
+  }
+
+  .add-instrument-form button {
+    padding: 8px 15px;
+  }
+
+  .view-instrument-container table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* makes items horizontal */
+  gap: 20px; /* space between links */
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.nav-list li a:hover {
+  background-color: #555;
+}
+button {
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+.add-instrument-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.add-instrument-form h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.add-instrument-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.update-btn {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.update-btn:hover {
+  background: #0056b3;
+}
+.add-instrument-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.add-instrument-form h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.add-instrument-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.update-btn {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.update-btn:hover {
+  background: #0056b3;
+}
+.navbar {
+  background-color: #333;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;   /* make items side by side */
+  gap: 20px;       /* spacing between links */
+}
+
+.navbar li {
+  display: inline; /* optional since flex handles it */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #555;
+}
+/* Container for the table */
+.view-instrument-container {
+  width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.view-instrument-container h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-decoration: underline;
+}
+
+/* Table */
+.instrument-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Table Header */
+.instrument-table thead {
+  background: linear-gradient(45deg, #4A90E2, #0B60B0);
+  color: white;
+}
+
+.instrument-table th,
+.instrument-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Zebra striping */
+.instrument-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.instrument-table tbody tr:hover {
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+/* Buttons */
+.instrument-table button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.instrument-table .edit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.instrument-table .edit-button:hover {
+  background-color: #218838;
+}
+
+.instrument-table .delete-button {
+  background-color: #d9534f;
+  color: white;
+}
+
+.instrument-table .delete-button:hover {
+  background-color: #c9302c;
+}
+
+/* Error message */
+.text-danger {
+  color: #dc3545;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+  .instrument-table, 
+  .instrument-table thead, 
+  .instrument-table tbody, 
+  .instrument-table th, 
+  .instrument-table td, 
+  .instrument-table tr {
+    display: block;
+  }
+
+  .instrument-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .instrument-table tr {
+    margin-bottom: 15px;
+  }
+
+  .instrument-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .instrument-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
