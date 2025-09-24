@@ -1,6 +1,8 @@
 // config.js
 const config = {
-    url: "http://localhost:1432"  // your backend URL and port
+    // url: "http://localhost:1432"  
+    url: "http://localhost:2030/springbootinstrumentapi"  
+
 };
 
 export default config;
