@@ -1,3 +1,5 @@
+
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import config from "../config";
@@ -14,7 +16,6 @@ export default function EditInstrument({ instrument, onUpdate }) {
     price: "",
   });
 
-  // Load selected instrument into form
   useEffect(() => {
     if (instrument) {
       setFormData({
@@ -27,33 +28,24 @@ export default function EditInstrument({ instrument, onUpdate }) {
     }
   }, [instrument]);
 
-  // Input change handler
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  // Submit update to backend
   const handleUpdate = async (e) => {
     e.preventDefault();
-    console.log("Updating instrument:", formData); // debug
-
     try {
       const res = await axios.put(
         `${config.url}/instrument/update/${formData.id}`,
         formData
       );
       toast.success(res.data || "Instrument updated successfully!");
-      if (onUpdate) onUpdate(); // refresh list in parent
+      if (onUpdate) onUpdate();
     } catch (err) {
-      console.error("Update failed ❌", err);
       toast.error(err.response?.data || err.message || "Update failed");
     }
   };
 
-  // If no instrument selected
   if (!instrument) {
     return (
       <div className="add-instrument-form">
@@ -66,50 +58,13 @@ export default function EditInstrument({ instrument, onUpdate }) {
     <div className="add-instrument-form">
       <h3>Edit Instrument</h3>
       <ToastContainer position="top-center" autoClose={4000} />
-
       <form onSubmit={handleUpdate}>
         <input type="number" id="id" value={formData.id} disabled />
-
-        <input
-          type="text"
-          id="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Instrument Name"
-          required
-        />
-
-        <input
-          type="text"
-          id="type"
-          value={formData.type}
-          onChange={handleChange}
-          placeholder="Instrument Type"
-          required
-        />
-
-        <input
-          type="text"
-          id="brand"
-          value={formData.brand}
-          onChange={handleChange}
-          placeholder="Brand"
-          required
-        />
-
-        <input
-          type="number"
-          step="0.01"
-          id="price"
-          value={formData.price}
-          onChange={handleChange}
-          placeholder="Price"
-          required
-        />
-
-        <button type="submit" className="update-btn">
-          Update Instrument
-        </button>
+        <input type="text" id="name" value={formData.name} onChange={handleChange} placeholder="Instrument Name" required />
+        <input type="text" id="type" value={formData.type} onChange={handleChange} placeholder="Instrument Type" required />
+        <input type="text" id="brand" value={formData.brand} onChange={handleChange} placeholder="Brand" required />
+        <input type="number" step="0.01" id="price" value={formData.price} onChange={handleChange} placeholder="Price" required />
+        <button type="submit" className="update-btn">Update Instrument</button>
       </form>
     </div>
   );

@@ -1,12 +1,13 @@
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../config";
-import Button from "@mui/material/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./instrument.css";
 
 export default function ViewAllInstrument({ onEdit }) {
+  const base = "/reactinstrumentapi"; // base URL
   const [instruments, setInstruments] = useState([]);
   const [error, setError] = useState("");
 
@@ -41,34 +42,33 @@ export default function ViewAllInstrument({ onEdit }) {
       {instruments.length === 0 ? (
         <p>No Instruments Found</p>
       ) : (
-       <table className="instrument-table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Brand</th>
-      <th>Price</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    {instruments.map(ins => (
-      <tr key={ins.id}>
-        <td data-label="ID">{ins.id}</td>
-        <td data-label="Name">{ins.name}</td>
-        <td data-label="Type">{ins.type}</td>
-        <td data-label="Brand">{ins.brand}</td>
-        <td data-label="Price">{ins.price}</td>
-        <td data-label="Action">
-          <button className="edit-button" onClick={() => onEdit(ins)}>Edit</button>
-          <button className="delete-button" onClick={() => deleteInstrument(ins.id)}>Delete</button>
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
-
+        <table className="instrument-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Brand</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {instruments.map(ins => (
+              <tr key={ins.id}>
+                <td data-label="ID">{ins.id}</td>
+                <td data-label="Name">{ins.name}</td>
+                <td data-label="Type">{ins.type}</td>
+                <td data-label="Brand">{ins.brand}</td>
+                <td data-label="Price">{ins.price}</td>
+                <td data-label="Action">
+                  <button className="edit-button" onClick={() => onEdit(ins)}>Edit</button>
+                  <button className="delete-button" onClick={() => deleteInstrument(ins.id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );

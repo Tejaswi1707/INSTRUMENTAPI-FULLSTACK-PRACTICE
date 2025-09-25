@@ -1,9 +1,11 @@
+
+
 import { useState } from "react";
 import axios from "axios";
 import config from "../config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import './instrument.css'
+import './instrument.css';
 
 export default function AddInstrument({ fetchInstruments }) {
   const [formData, setFormData] = useState({
